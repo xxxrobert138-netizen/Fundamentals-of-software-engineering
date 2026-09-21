@@ -1,4 +1,5 @@
 import os
+import math
 
 input_filename = input("Введите полное имя входного файла: ")
 
@@ -19,7 +20,7 @@ else:
         line = line.strip()
         if line:
             legs_miles.append(float(line))
-            total_distance += round(float(line) * scale, 1)
+            total_distance += math.ceil(float(line) * 10.0 * scale) / 10
 
     print("Pyrski Robert")
     print("Simple Map Distance Computations")
@@ -29,7 +30,7 @@ else:
     print("=========================================================================")
     leg_number = 1
     for miles in legs_miles:
-        print(f"# {leg_number}: {miles:.1f}   {miles * scale:.1f}")
+        print(f"# {leg_number}: {miles:.1f}   {math.ceil(miles * 10.0 * scale) / 10:.1f}")
         leg_number += 1
     print("=========================================================================")
-    print(f"Total Distance: {total_distance:.1f}")
+    print(f"Total Distance: {total_distance:.1f} miles")
