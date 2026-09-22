@@ -11,33 +11,6 @@ else:
 
     for line in lines[2:]:
         l = line.split()
-        
-        print(f"{l[0]}: ")
-
-
-
-    # first_line_data = lines[0].split()
-    # num_locations = int(first_line_data[0])
-    # scale = float(first_line_data[1])
-
-    # legs_miles = []
-    # total_distance = 0.0
-
-    # for line in lines[1:]:
-    #     line = line.strip()
-    #     if line:
-    #         legs_miles.append(float(line))
-    #         total_distance += math.ceil(float(line) * 10.0 * scale) / 10
-
-    # print("Pyrski Robert")
-    # print("Simple Map Distance Computations")
-    # print(f"Map Scale Factor: {scale:.2f} miles per inch")
-    # print("     Map     Mileage")
-    # print("     Measure Distance")
-    # print("=========================================================================")
-    # leg_number = 1
-    # for miles in legs_miles:
-    #     print(f"# {leg_number}: {miles:.1f}   {math.ceil(miles * 10.0 * scale) / 10:.1f}")
-    #     leg_number += 1
-    # print("=========================================================================")
-    # print(f"Total Distance: {total_distance:.1f} miles")
+        TWC = 35.74 + 0.6125 * float(l[1]) + (0.4275 * float(l[1]) - 35.75) * (float(l[2])**0.16)
+        WCI = (10 * (float(l[2]) ** 0.5) - float(l[2]) + 10.5) * (33 - float(l[1]))
+        print(f"{l[0]}:     {TWC:.1f}    {WCI:.1f}")
