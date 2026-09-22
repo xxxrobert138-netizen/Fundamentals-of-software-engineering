@@ -30,7 +30,7 @@ else:
     print("=========================================================================")
     leg_number = 1
     for miles in legs_miles:
-        print(f"# {leg_number}: {miles:.1f}   {math.ceil(miles * 10.0 * scale) / 10:.1f}")
+        print(f"# {leg_number}: {miles:<10.1f}   {math.ceil(miles * 10.0 * scale) / 10:<15.1f}")
         leg_number += 1
     print("=========================================================================")
     print(f"Total Distance: {total_distance:.1f} miles")
