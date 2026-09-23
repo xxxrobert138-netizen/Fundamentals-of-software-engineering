@@ -16,7 +16,7 @@ else:
         l = line.split()
         TWC = 35.74 + 0.6125 * float(l[1]) + (0.4275 * float(l[1]) - 35.75) * (float(l[2])**0.16)
         TWCAverage += TWC
-        WCI = (10 * (float(l[2]) ** 0.5) - float(l[2]) + 10.5) * (33 - float(l[1]))
+        WCI = TWC - float(l[1])
         print(f"{l[0] + ":":<20}{TWC:<25.1f}{WCI:<30.1f}")
     print("----------------------------------------------------------------------------------")
     print(f"The average adjusted temperature, based on {len(lines) - 2} observations, was {TWCAverage / (len(lines) - 2):.1f}")
